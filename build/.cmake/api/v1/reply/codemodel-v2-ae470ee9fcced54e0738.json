@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "patrol_car",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "PictureCap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PictureCap-Debug-2dcb309b739019079e92.json",
+					"name" : "PictureCap",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RunImages::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RunImages-Debug-f5d2139a79e9e92cc813.json",
+					"name" : "RunImages",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "StaticTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-StaticTest-Debug-5879310af79502a7f1b5.json",
+					"name" : "StaticTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pthreadcap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pthreadcap-Debug-7df930ad9243cd408a65.json",
+					"name" : "pthreadcap",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/edgeboard/workspace/SDUWHSmartCar/build",
+		"source" : "/home/edgeboard/workspace/SDUWHSmartCar"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
