@@ -1,0 +1,11 @@
+{
+    "SpeedHigh":50,
+    "SpeedHighRange":20,
+    "SpeedMid":45,
+    "SpeedMidRange":10,
+    "SpeedLow":40,
+    "UartSendEnable":true,
+    "visionenable":false,
+    "EmergencyStop":false,
+    "HandThreshold":-5
+}
