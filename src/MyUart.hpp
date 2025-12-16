@@ -58,7 +58,7 @@ int usb_uart_5byte_send_3_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor
 
 int usb_uart_5byte_send_3_1(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int duty_SMotor);
 
-int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int duty_SMotor, int distance, float slope);
+int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int duty_SMotor, unsigned int distance, float slope);
 
 uint8 uart_hihgercomputer_synergy(void);
 

@@ -1,19 +1,30 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "src/headfile.hpp"
+#include "src/json.hpp"
 
 using namespace cv;
 using namespace std;
 
 int main() {
     // // 打开默认的摄像头
-    // VideoCapture cap(0);
+    // VideoCapture cap(0);//
 
     // // 检查视频流是否打开
     // if (!cap.isOpened()) {
     //     cerr << "ERROR: Unable to open the camera" << endl;
     //     return -1;
     // }
+    cout<<"首先进行配置文件读取"<<endl;
+    std::ifstream in_file("/root/workspace/SDUWHSmartCar/config.json");
+    nlohmann::json doc;
+    if (!in_file.is_open()) {
+        cout<<"打开配置文件失败！"<<endl;
+        exit(1);
+    }
+    in_file >> doc;
+    in_file.close();
+    string Name = doc["capname"];
 
     Mat m1;
     unsigned char *yuv422frame = NULL;
@@ -52,7 +63,7 @@ int main() {
         char c = (char) waitKey(25);
         if (c == 's') {
             stringstream ss;
-            ss << "Coneframe-" << count << ".png";
+            ss << Name << count << ".jpg";
             imwrite(ss.str(), m1);
             cout << "Saved " << ss.str() << endl;
             count++;

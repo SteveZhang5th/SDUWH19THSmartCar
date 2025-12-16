@@ -49,8 +49,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/pthreadcap.dir/DependInfo.cmake"
-  "CMakeFiles/RunImages.dir/DependInfo.cmake"
-  "CMakeFiles/PictureCap.dir/DependInfo.cmake"
   "CMakeFiles/StaticTest.dir/DependInfo.cmake"
+  "CMakeFiles/PictureCap.dir/DependInfo.cmake"
+  "CMakeFiles/RunImages.dir/DependInfo.cmake"
+  "CMakeFiles/pthreadcap.dir/DependInfo.cmake"
+  "CMakeFiles/mainpro.dir/DependInfo.cmake"
   )

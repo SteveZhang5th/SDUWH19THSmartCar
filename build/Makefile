@@ -111,30 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named pthreadcap
+# Target rules for targets named StaticTest
 
 # Build rule for target.
-pthreadcap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pthreadcap
-.PHONY : pthreadcap
+StaticTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 StaticTest
+.PHONY : StaticTest
 
 # fast build rule for target.
-pthreadcap/fast:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/build
-.PHONY : pthreadcap/fast
-
-#=============================================================================
-# Target rules for targets named RunImages
-
-# Build rule for target.
-RunImages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RunImages
-.PHONY : RunImages
-
-# fast build rule for target.
-RunImages/fast:
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/build
-.PHONY : RunImages/fast
+StaticTest/fast:
+	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/build
+.PHONY : StaticTest/fast
 
 #=============================================================================
 # Target rules for targets named PictureCap
@@ -150,17 +137,43 @@ PictureCap/fast:
 .PHONY : PictureCap/fast
 
 #=============================================================================
-# Target rules for targets named StaticTest
+# Target rules for targets named RunImages
 
 # Build rule for target.
-StaticTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 StaticTest
-.PHONY : StaticTest
+RunImages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RunImages
+.PHONY : RunImages
 
 # fast build rule for target.
-StaticTest/fast:
-	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/build
-.PHONY : StaticTest/fast
+RunImages/fast:
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/build
+.PHONY : RunImages/fast
+
+#=============================================================================
+# Target rules for targets named pthreadcap
+
+# Build rule for target.
+pthreadcap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pthreadcap
+.PHONY : pthreadcap
+
+# fast build rule for target.
+pthreadcap/fast:
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/build
+.PHONY : pthreadcap/fast
+
+#=============================================================================
+# Target rules for targets named mainpro
+
+# Build rule for target.
+mainpro: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mainpro
+.PHONY : mainpro
+
+# fast build rule for target.
+mainpro/fast:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/build
+.PHONY : mainpro/fast
 
 PictureCap.o: PictureCap.cpp.o
 
@@ -243,6 +256,33 @@ StaticTest.cpp.s:
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/StaticTest.cpp.s
 .PHONY : StaticTest.cpp.s
 
+mainpro.o: mainpro.cpp.o
+
+.PHONY : mainpro.o
+
+# target to build an object file
+mainpro.cpp.o:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/mainpro.cpp.o
+.PHONY : mainpro.cpp.o
+
+mainpro.i: mainpro.cpp.i
+
+.PHONY : mainpro.i
+
+# target to preprocess a source file
+mainpro.cpp.i:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/mainpro.cpp.i
+.PHONY : mainpro.cpp.i
+
+mainpro.s: mainpro.cpp.s
+
+.PHONY : mainpro.s
+
+# target to generate assembly for a file
+mainpro.cpp.s:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/mainpro.cpp.s
+.PHONY : mainpro.cpp.s
+
 pthreadcap.o: pthreadcap.cpp.o
 
 .PHONY : pthreadcap.o
@@ -276,9 +316,10 @@ src/MyMath.o: src/MyMath.cpp.o
 
 # target to build an object file
 src/MyMath.cpp.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyMath.cpp.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyMath.cpp.o
 .PHONY : src/MyMath.cpp.o
 
 src/MyMath.i: src/MyMath.cpp.i
@@ -287,9 +328,10 @@ src/MyMath.i: src/MyMath.cpp.i
 
 # target to preprocess a source file
 src/MyMath.cpp.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyMath.cpp.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyMath.cpp.i
 .PHONY : src/MyMath.cpp.i
 
 src/MyMath.s: src/MyMath.cpp.s
@@ -298,9 +340,10 @@ src/MyMath.s: src/MyMath.cpp.s
 
 # target to generate assembly for a file
 src/MyMath.cpp.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyMath.cpp.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyMath.cpp.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyMath.cpp.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyMath.cpp.s
 .PHONY : src/MyMath.cpp.s
 
 src/MyUart.o: src/MyUart.cpp.o
@@ -309,9 +352,10 @@ src/MyUart.o: src/MyUart.cpp.o
 
 # target to build an object file
 src/MyUart.cpp.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyUart.cpp.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyUart.cpp.o
 .PHONY : src/MyUart.cpp.o
 
 src/MyUart.i: src/MyUart.cpp.i
@@ -320,9 +364,10 @@ src/MyUart.i: src/MyUart.cpp.i
 
 # target to preprocess a source file
 src/MyUart.cpp.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyUart.cpp.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyUart.cpp.i
 .PHONY : src/MyUart.cpp.i
 
 src/MyUart.s: src/MyUart.cpp.s
@@ -331,9 +376,10 @@ src/MyUart.s: src/MyUart.cpp.s
 
 # target to generate assembly for a file
 src/MyUart.cpp.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/MyUart.cpp.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/MyUart.cpp.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/MyUart.cpp.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/MyUart.cpp.s
 .PHONY : src/MyUart.cpp.s
 
 src/cap.o: src/cap.c.o
@@ -342,9 +388,10 @@ src/cap.o: src/cap.c.o
 
 # target to build an object file
 src/cap.c.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/cap.c.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/cap.c.o
 .PHONY : src/cap.c.o
 
 src/cap.i: src/cap.c.i
@@ -353,9 +400,10 @@ src/cap.i: src/cap.c.i
 
 # target to preprocess a source file
 src/cap.c.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/cap.c.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/cap.c.i
 .PHONY : src/cap.c.i
 
 src/cap.s: src/cap.c.s
@@ -364,9 +412,10 @@ src/cap.s: src/cap.c.s
 
 # target to generate assembly for a file
 src/cap.c.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/cap.c.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/cap.c.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/cap.c.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/cap.c.s
 .PHONY : src/cap.c.s
 
 src/comm.o: src/comm.c.o
@@ -375,9 +424,10 @@ src/comm.o: src/comm.c.o
 
 # target to build an object file
 src/comm.c.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/comm.c.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/comm.c.o
 .PHONY : src/comm.c.o
 
 src/comm.i: src/comm.c.i
@@ -386,9 +436,10 @@ src/comm.i: src/comm.c.i
 
 # target to preprocess a source file
 src/comm.c.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/comm.c.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/comm.c.i
 .PHONY : src/comm.c.i
 
 src/comm.s: src/comm.c.s
@@ -397,9 +448,10 @@ src/comm.s: src/comm.c.s
 
 # target to generate assembly for a file
 src/comm.c.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/comm.c.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/comm.c.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/comm.c.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/comm.c.s
 .PHONY : src/comm.c.s
 
 src/serial.o: src/serial.cpp.o
@@ -408,9 +460,10 @@ src/serial.o: src/serial.cpp.o
 
 # target to build an object file
 src/serial.cpp.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/serial.cpp.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/serial.cpp.o
 .PHONY : src/serial.cpp.o
 
 src/serial.i: src/serial.cpp.i
@@ -419,9 +472,10 @@ src/serial.i: src/serial.cpp.i
 
 # target to preprocess a source file
 src/serial.cpp.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/serial.cpp.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/serial.cpp.i
 .PHONY : src/serial.cpp.i
 
 src/serial.s: src/serial.cpp.s
@@ -430,9 +484,10 @@ src/serial.s: src/serial.cpp.s
 
 # target to generate assembly for a file
 src/serial.cpp.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/serial.cpp.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/serial.cpp.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/serial.cpp.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/serial.cpp.s
 .PHONY : src/serial.cpp.s
 
 src/trvision.o: src/trvision.cpp.o
@@ -441,9 +496,10 @@ src/trvision.o: src/trvision.cpp.o
 
 # target to build an object file
 src/trvision.cpp.o:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.o
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.o
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/trvision.cpp.o
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.o
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.o
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/trvision.cpp.o
 .PHONY : src/trvision.cpp.o
 
 src/trvision.i: src/trvision.cpp.i
@@ -452,9 +508,10 @@ src/trvision.i: src/trvision.cpp.i
 
 # target to preprocess a source file
 src/trvision.cpp.i:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.i
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.i
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/trvision.cpp.i
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.i
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.i
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/trvision.cpp.i
 .PHONY : src/trvision.cpp.i
 
 src/trvision.s: src/trvision.cpp.s
@@ -463,9 +520,10 @@ src/trvision.s: src/trvision.cpp.s
 
 # target to generate assembly for a file
 src/trvision.cpp.s:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.s
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.s
 	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/src/trvision.cpp.s
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/src/trvision.cpp.s
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/src/trvision.cpp.s
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/src/trvision.cpp.s
 .PHONY : src/trvision.cpp.s
 
 # Help Target
@@ -474,12 +532,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... pthreadcap"
-	@echo "... RunImages"
-	@echo "... PictureCap"
 	@echo "... StaticTest"
+	@echo "... PictureCap"
+	@echo "... rebuild_cache"
+	@echo "... RunImages"
+	@echo "... pthreadcap"
+	@echo "... mainpro"
+	@echo "... edit_cache"
 	@echo "... PictureCap.o"
 	@echo "... PictureCap.i"
 	@echo "... PictureCap.s"
@@ -489,6 +548,9 @@ help:
 	@echo "... StaticTest.o"
 	@echo "... StaticTest.i"
 	@echo "... StaticTest.s"
+	@echo "... mainpro.o"
+	@echo "... mainpro.i"
+	@echo "... mainpro.s"
 	@echo "... pthreadcap.o"
 	@echo "... pthreadcap.i"
 	@echo "... pthreadcap.s"

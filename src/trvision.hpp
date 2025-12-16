@@ -26,6 +26,8 @@ using namespace cv;
 #define BLACK 1 //定义二值化黑色像素点的值
 #define     func_limit(x, y)        ((x) > (y) ? (y) : ((x) < -(y) ? -(y) : (x)))
 #define pi 3.1415926f
+#define CONTROLLINEONE 40
+#define CONTROLLINETWO 41
 
 extern int Threshold;//存储每幅灰度图像计算出的二值化阈值
 extern uint8 toplinearry[14];//寻找有效封顶行所使用的数组，初始化为图像最顶端
@@ -62,10 +64,12 @@ extern enum EightWay LEFT;//左边巡线使用的标志位
 extern enum EightWay RIGHT;//右边巡线使用的标志位
 extern int posofleft;//左边八临域巡线使用的开始扫描种子（起始）点相对位置 position of left
 extern int posofright;//右边八临域巡线使用的开始扫描种子（起始）点相对位置 position of right
-extern roadside leftside[230];//左边线八临域结构体，每次初始化
-extern uint8 length_leftside;//左边八临域结构体数组长度,每次初始化
-extern roadside rightside[230];//右边线八临域结构体，每次初始化
-extern uint8 length_rightside;//右边八临域结构体数组长度,每次初始化
+extern roadside leftside[350];//左边线八临域结构体，每次初始化
+extern int length_leftside;//左边八临域结构体数组长度,每次初始化
+extern int length_half_leftside;//左边八临域结构体数组第一次到一半图像高度时的长度，每次初始化
+extern roadside rightside[350];//右边线八临域结构体，每次初始化
+extern int length_rightside;//右边八临域结构体数组长度,每次初始化
+extern int length_half_rightside;//右边八临域结构体数组第一次到一半图像高度时的长度，每次初始化
 extern uint8 midline[CamH];//拟合出来实际道路中线，每次初始化
 extern uint8 midleft[CamH];//无重叠左边边线，每次初始化
 extern uint8 validmidleft[CamH];//为了得到无重叠左边边线设置的验证数组,每次初始化
@@ -90,10 +94,10 @@ typedef struct TrDetectResult {
     int width;
     int height;
 }TrDetectResult;
-extern int detectTypeNum[13];      
+extern int detectTypeNum[10];      
 //下标从0开始，type分别对应
-//bomb bridge safety cone crosswalk danger evil block patient prop spy thief tumble
-// 0     1      2      3      4       5      6    7     8      9    10   11    12
+//bomb bridge safety cone danger evil patient spy thief tumble
+// 0     1      2      3    4     5      6     7    8    9 
 extern std::vector<TrDetectResult> Tr_result;             
 extern std::vector<TrDetectResult> conelist;
 extern std::vector<TrDetectResult> rightconelist;
@@ -198,20 +202,25 @@ float vector_cos(roadside bottom, roadside mid, roadside top);
 
 
 enum ElementFlag{Normal,
-                PreCross,
                 PreRightRound,InRightRound,OutRightRound,AcrossRightRound,
                 PreLeftRound,InLeftRound,OutLeftRound,AcrossLeftRound,
                 ZebraFlag,
                 RecMaintenWay,PreMainten,InMainten,OutMainten,
-                PreBoom,YellowHinder};//特殊元素主状态标志位
-extern std::string ElementString[17];//特殊元素主状态标志位显示字符串
+                PreBoom,YellowHinder,OutHinder,
+                GoSafety,
+                PreDanger,
+                PreSpy,OverSpy,StopSpy,
+                Bridge};//特殊元素主状态标志位
+enum CrossFlag{None,HaveCrossed,InRightAlpha,InLeftAlpha};//十字单独处理状态标志位
+extern enum CrossFlag crossflag;//主状态主标志位
+extern std::string ElementString[23];//特殊元素主状态标志位显示字符串
 extern enum ElementFlag elementflag;//主状态主标志位
 extern std::string ControSideFlagString[4];
 enum ControSideFlag{MidSide,RightSide,LeftSide,Straight};//依赖左右边界巡线标志位
 extern enum ControSideFlag controsideflag;//依赖左右边界巡线主标志位
 //打角行一定情况下动态，最大不超过75
-extern uint8 waycontrolline1;//第一打角行48
-extern uint8 waycontrolline2;//第二打角行49
+extern uint8 waycontrolline1;//第一打角行40
+extern uint8 waycontrolline2;//第二打角行41
 extern uint8 realcontrolline1;//动态打角行1
 extern uint8 realcontrolline2;//动态打角行2
 extern uint8 Sidepianyi;//左右巡线偏移量
@@ -260,7 +269,7 @@ extern int Redsencount;
 bool RecRed(Mat &src);
 /**************************************************************************************************************************/
 //黄色锥桶识别
-void RecYellowCone(Mat src);
+void RecYellowCone(Mat src,double xishu,int yuzhi);
 /**************************************************************************************************************************/
 //状态复位计数位
 extern int32 OutCrossCount;
@@ -273,10 +282,52 @@ extern int32 OutAcrossleftRoundCount;
 extern int32 OutPreRound;//入环岛鲁棒性保证
 extern int32 OutRoundCount;//出环岛鲁棒性保证
 extern int32 OutZebraCount;
+extern int CountOutMainten;
 extern int SumZebraCount;//一过斑马线而不入
 extern int ZebraGuai;
 extern bool ZebraEnable;
 extern int32 CountZebraEnable;
+//congfig控制变量--------------------
+extern bool CrossStateEnable;//十字小状态使能
+extern int InMaintenCount;//数几帧进维修区
+extern int OutConeDIstance;//进维修区时，锥桶离车头有多少距离时退出
+extern int RightRoundTime;//右环岛准入次数
+extern int LeftRoundTime;//左环岛准入次数
+extern int PreRoundSpeed;//预进环岛速度
+extern int InRoundSpeed;//进环岛速度
+extern int OutRoundSpeed;//出环岛速度
+extern int InRightBoundPianyi;//入右环岛偏移加强
+extern int InLeftBoundPianyi;//入左环岛偏移加强
+extern int OutRightBoundPianyi;//出右环岛偏移加强
+extern int OutLeftBoundPianyi;//出左环岛偏移加强
+extern int PreMaintenSpeed;//预进维修区速度
+extern int InMaintenSpeed;//进入维修区的速度
+extern int LeftMaintenWay;//进左维修区舵机打脚
+extern int RightMaintenWay;//进右维修区舵机打脚
+extern int OutMaintenSpeed;//出维修区往后倒车速度
+extern int InBoomCount;//数几帧进炸弹区
+extern int InBoomWay;//手动控制进炸弹区第一个锥桶的位置，1为在右边，2为在左边，其他值不使能该功能
+extern int PreBoomSpeed;//预进炸弹区速度
+extern int YellowCount;//经过了几个锥桶
+extern int YellowHinderSpeed;//在炸弹区域里的速度
+extern int YellowChangeLine;//在炸弹区，锥桶离车头距离，切换方向的y坐标
+extern int LeftHinderPianyi;//在炸弹区，巡左边线距离
+extern int RightHinderPianyi;//在炸弹区，巡右边线距离
+extern int BlockPianyi;//炸弹区域最后沿着黑块另外一边出来
+extern int BlockPianLine;//什么时候在砖头前偏头
+extern int BridgeSpeed;//上坡道的速度
+extern int BridgeEnable;//桥标志位使能
+extern int InPropCount;//数几帧进追逐区
+extern int PreSpySpeed;//预逼停状态速度
+extern int OverSpySpeed;//掠过逼停状态速度
+extern int StopSpySpeed;//逼停状态速度
+extern int StopSpyCount;//逼停状态停止帧数
+extern int OverSpyCount;//掠过逼停状态帧数
+extern int PreDangerSpeed;//预碰撞状态速度
+extern int SafetyRightPian;//安全小车巡右边线偏移
+extern int SafetyLeftPian;//安全小车巡左边线偏移
+extern int DangerRightPian;//碰撞小车巡右边线偏移
+extern int DangerLeftPian;//碰撞小车巡左边线偏移
 /**************************************************************************************************************************/
 void ReconElements(void);
 

@@ -60,76 +60,39 @@ CMAKE_SOURCE_DIR = /root/workspace/SDUWHSmartCar
 CMAKE_BINARY_DIR = /root/workspace/SDUWHSmartCar/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/pthreadcap.dir
+# Target rules for target CMakeFiles/StaticTest.dir
 
 # All Build rule for target.
-CMakeFiles/pthreadcap.dir/all:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/depend
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26 "Built target pthreadcap"
-.PHONY : CMakeFiles/pthreadcap.dir/all
+CMakeFiles/StaticTest.dir/all:
+	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/depend
+	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18 "Built target StaticTest"
+.PHONY : CMakeFiles/StaticTest.dir/all
 
 # Include target in all.
-all: CMakeFiles/pthreadcap.dir/all
+all: CMakeFiles/StaticTest.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/pthreadcap.dir/rule: cmake_check_build_system
+CMakeFiles/StaticTest.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pthreadcap.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/StaticTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 0
-.PHONY : CMakeFiles/pthreadcap.dir/rule
+.PHONY : CMakeFiles/StaticTest.dir/rule
 
 # Convenience name for target.
-pthreadcap: CMakeFiles/pthreadcap.dir/rule
+StaticTest: CMakeFiles/StaticTest.dir/rule
 
-.PHONY : pthreadcap
-
-# clean rule for target.
-CMakeFiles/pthreadcap.dir/clean:
-	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/clean
-.PHONY : CMakeFiles/pthreadcap.dir/clean
+.PHONY : StaticTest
 
 # clean rule for target.
-clean: CMakeFiles/pthreadcap.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/RunImages.dir
-
-# All Build rule for target.
-CMakeFiles/RunImages.dir/all:
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/depend
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10 "Built target RunImages"
-.PHONY : CMakeFiles/RunImages.dir/all
-
-# Include target in all.
-all: CMakeFiles/RunImages.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/RunImages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RunImages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 0
-.PHONY : CMakeFiles/RunImages.dir/rule
-
-# Convenience name for target.
-RunImages: CMakeFiles/RunImages.dir/rule
-
-.PHONY : RunImages
+CMakeFiles/StaticTest.dir/clean:
+	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/clean
+.PHONY : CMakeFiles/StaticTest.dir/clean
 
 # clean rule for target.
-CMakeFiles/RunImages.dir/clean:
-	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/clean
-.PHONY : CMakeFiles/RunImages.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/RunImages.dir/clean
+clean: CMakeFiles/StaticTest.dir/clean
 
 .PHONY : clean
 
@@ -171,39 +134,113 @@ clean: CMakeFiles/PictureCap.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/StaticTest.dir
+# Target rules for target CMakeFiles/RunImages.dir
 
 # All Build rule for target.
-CMakeFiles/StaticTest.dir/all:
-	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/depend
-	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18 "Built target StaticTest"
-.PHONY : CMakeFiles/StaticTest.dir/all
+CMakeFiles/RunImages.dir/all:
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/depend
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10 "Built target RunImages"
+.PHONY : CMakeFiles/RunImages.dir/all
 
 # Include target in all.
-all: CMakeFiles/StaticTest.dir/all
+all: CMakeFiles/RunImages.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/StaticTest.dir/rule: cmake_check_build_system
+CMakeFiles/RunImages.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/StaticTest.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RunImages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 0
-.PHONY : CMakeFiles/StaticTest.dir/rule
+.PHONY : CMakeFiles/RunImages.dir/rule
 
 # Convenience name for target.
-StaticTest: CMakeFiles/StaticTest.dir/rule
+RunImages: CMakeFiles/RunImages.dir/rule
 
-.PHONY : StaticTest
-
-# clean rule for target.
-CMakeFiles/StaticTest.dir/clean:
-	$(MAKE) -f CMakeFiles/StaticTest.dir/build.make CMakeFiles/StaticTest.dir/clean
-.PHONY : CMakeFiles/StaticTest.dir/clean
+.PHONY : RunImages
 
 # clean rule for target.
-clean: CMakeFiles/StaticTest.dir/clean
+CMakeFiles/RunImages.dir/clean:
+	$(MAKE) -f CMakeFiles/RunImages.dir/build.make CMakeFiles/RunImages.dir/clean
+.PHONY : CMakeFiles/RunImages.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/RunImages.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pthreadcap.dir
+
+# All Build rule for target.
+CMakeFiles/pthreadcap.dir/all:
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/depend
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=27,28,29,30,31,32,33,34 "Built target pthreadcap"
+.PHONY : CMakeFiles/pthreadcap.dir/all
+
+# Include target in all.
+all: CMakeFiles/pthreadcap.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pthreadcap.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pthreadcap.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 0
+.PHONY : CMakeFiles/pthreadcap.dir/rule
+
+# Convenience name for target.
+pthreadcap: CMakeFiles/pthreadcap.dir/rule
+
+.PHONY : pthreadcap
+
+# clean rule for target.
+CMakeFiles/pthreadcap.dir/clean:
+	$(MAKE) -f CMakeFiles/pthreadcap.dir/build.make CMakeFiles/pthreadcap.dir/clean
+.PHONY : CMakeFiles/pthreadcap.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/pthreadcap.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mainpro.dir
+
+# All Build rule for target.
+CMakeFiles/mainpro.dir/all:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/depend
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/workspace/SDUWHSmartCar/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26 "Built target mainpro"
+.PHONY : CMakeFiles/mainpro.dir/all
+
+# Include target in all.
+all: CMakeFiles/mainpro.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mainpro.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mainpro.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/workspace/SDUWHSmartCar/build/CMakeFiles 0
+.PHONY : CMakeFiles/mainpro.dir/rule
+
+# Convenience name for target.
+mainpro: CMakeFiles/mainpro.dir/rule
+
+.PHONY : mainpro
+
+# clean rule for target.
+CMakeFiles/mainpro.dir/clean:
+	$(MAKE) -f CMakeFiles/mainpro.dir/build.make CMakeFiles/mainpro.dir/clean
+.PHONY : CMakeFiles/mainpro.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/mainpro.dir/clean
 
 .PHONY : clean
 

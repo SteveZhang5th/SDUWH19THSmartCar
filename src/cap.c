@@ -248,7 +248,8 @@ static void thread(void) {
                 /* Could ignore EIO, see spec. */
                 /* fall through */
             } else {
-                assert(false); // errno_exit("VIDIOC_DQBUF"); // 这里出问题一般是摄像头掉了
+                printf("摄像头掉了");
+                assert(false); // errno_exit("VIDIOC_DQBUF"); // 这里出问题一般是摄像头掉了         
             }
         }
         assert(buf.index < n_buffers);
@@ -318,6 +319,19 @@ bool cap_init(bool is_replay_, bool is_record_, bool have_meta_) {
     
     meta_not_processed = false;
 
+    if (!is_replay) {//非回放，正常跑
+        if (is_record) {//是否录制
+            int ret = system("rm -rf " "record/");
+            ret = system("mkdir -p " "record/");
+
+            // index file
+            fp = fopen("record/" "data", "wb");
+            assert(fp);
+            fp_index = fopen("record/" "index", "wb");
+            assert(fp_index);
+            setbuf(fp, NULL); // 这里关了缓冲区，看起来并不会导致延迟激增情况变多，所以这里先保留
+            setbuf(fp_index, NULL);
+        }
 
         pthread_mutex_init(&new_image_meta_lock, NULL);
 
@@ -326,6 +340,32 @@ bool cap_init(bool is_replay_, bool is_record_, bool have_meta_) {
         // TODO 提升该线程优先级
         // ref: https://sites.google.com/site/myembededlife/Home/applications--development/linux-multi-thread-programming
         int ret = pthread_create(&tid, NULL, (void *(*)(void *))thread, NULL);
+        assert(ret == 0);
+
+    } else {
+        fp = fopen("record/" "data", "rb");
+        assert(fp);
+
+        // index file
+        fp_index = fopen("record/" "index", "rb");
+        assert(fp_index);
+
+        replay_offsets[0] = 0;
+        for (replay_ids_n = 0; ; ++replay_ids_n) {
+            int ret = fscanf(fp_index, "%d%d", &replay_ids[replay_ids_n], &replay_sizes[replay_ids_n]);
+            if (ret == EOF) break;
+            replay_offsets[replay_ids_n + 1] = replay_offsets[replay_ids_n] + replay_sizes[replay_ids_n];
+            if (have_meta) {
+                int ret = fscanf(fp_index, "%d", &replay_meta_sizes[replay_ids_n]);
+                if (ret == EOF) break;
+                replay_offsets[replay_ids_n + 1] += replay_meta_sizes[replay_ids_n];
+            }
+        }
+
+        replay_ids_i = 0;
+
+        fclose(fp_index);
+    }
 
     return false;
 }
@@ -335,7 +375,7 @@ bool cap_deinit(void) {
     is_inited = false;
 
     if (!is_replay) {
-#ifdef WITH_GNU_COMPILER
+
         if (is_record) {
             fclose(fp);
             fclose(fp_index);
@@ -343,9 +383,7 @@ bool cap_deinit(void) {
 
         int ret = pthread_join(tid, NULL);
         assert(ret == 0);
-#else
-        assert(false);
-#endif
+
     } else {
         fclose(fp);
     }
@@ -355,7 +393,7 @@ bool cap_deinit(void) {
 bool cap_grab(void *raw_image, int *raw_image_size) {
     assert(is_inited);
 
-
+    if (!is_replay) {
 
         // // 时间测量
         // struct timespec time0 = {0, 0};
@@ -387,10 +425,177 @@ bool cap_grab(void *raw_image, int *raw_image_size) {
         clock_gettime(CLOCK_MONOTONIC, &time2);
         assert((time2.tv_sec - time1.tv_sec) * 1000000 + (time2.tv_nsec - time1.tv_nsec) / 1000 < (3 - 0.5/*留出余量*/) * 1000000 / CAP_FPS); // 3 个图像周期内
 
+        if (is_record) { // 一般在 1ms 左右，有时会有尖峰到 15ms
+            if (have_meta) {
+                assert(meta_not_processed == false);
+                meta_not_processed = true;
+            }
+
+            // printf("image_id: %d\n", image_id);
+            assert(image_id < MAX_ID);
+            size_t written = fwrite(raw_image, *raw_image_size, 1, fp);
+            assert(written == 1); //                            ^ 成功写入的对象数
+            // fflush(fp);
+            // 加 fflush ，延迟激增的情况会变多，但是能确保图像一定落盘（应该）
+            // 不加 fflush，延迟激增情况会少很多，而且即使有，延迟值不会特别高，但是不能保证在发生错误后图像一定能落盘
+            // 为了延迟考虑，不加 fflush
+
+            // index file
+            int ret = fprintf(fp_index, "%d %d%c", image_id, *raw_image_size, have_meta ? ' ' : '\n');
+            assert(ret >= 0);
+            // fflush(fp_index);
+
+            // printf("!");
+
+            // 时间测量
+            struct timespec time3 = {0, 0};
+            clock_gettime(CLOCK_MONOTONIC, &time3);
+            int time3_diff = (time3.tv_sec - time2.tv_sec) * 1000000 + (time3.tv_nsec - time2.tv_nsec) / 1000;
+            if (time3_diff > 1000)
+                printf(ANSI_COLOR_YELLOW "record_to_file: %04dus\n" ANSI_COLOR_RESET, time3_diff);
+
+            // printf(ANSI_COLOR_YELLOW "grab: %04ldus\n" ANSI_COLOR_RESET, (time3.tv_sec - time0.tv_sec) * 1000000 + (time3.tv_nsec - time0.tv_nsec) / 1000);
+        }
+
+    } else {
+        if (have_meta) {
+            assert(meta_not_processed == false);
+            meta_not_processed = true;
+        }
+
+        new_image_id = replay_ids[replay_ids_i];
+
+        if (ftell(fp) != replay_offsets[replay_ids_i]) { // rewinded
+            printf("file rewinded\n");
+            int ret = fseek(fp, replay_offsets[replay_ids_i], SEEK_SET);
+            assert(ret == 0);
+        }
+
+        *raw_image_size = replay_sizes[replay_ids_i];
+        assert(*raw_image_size > 0);
+        size_t readed = fread(raw_image, *raw_image_size, 1, fp);
+        assert(readed == 1);
+
+        // printf(".");
+    }
+    return false;
+}
+
+int cap_replay_get_image_id(void) {
+    assert(is_inited);
+    assert(is_replay); // 只可以在 replay 中使用，实时情况下非线程安全
+    return new_image_id;
+}
+
+bool cap_replay_go(int step) {
+    replay_ids_i += step;
+
+    if (replay_ids_i < 0) replay_ids_i = 0;
+    // if (replay_ids_i >= replay_ids_n) replay_ids_i = replay_ids_n - 1;
+    if (replay_ids_i >= replay_ids_n) exit(0);
+    return false;
+}
+
+bool cap_meta_record(const char *buf, int len) { // buf 不要有回车
+
+    assert(is_inited);
+    assert(is_record);
+    assert(have_meta);
+    assert(meta_not_processed == true);
+    meta_not_processed = false;
+
+    struct timespec time2 = {0, 0};
+    clock_gettime(CLOCK_MONOTONIC, &time2);
+
+    assert(len >= 0);
+    if (len != 0) {
+        size_t written = fwrite(buf, len, 1, fp);
+        assert(written == 1);
+    }
+
+    // index file
+    int ret = fprintf(fp_index, "%d\n", len);
+    assert(ret >= 0);
+
+    // 时间测量
+    struct timespec time3 = {0, 0};
+    clock_gettime(CLOCK_MONOTONIC, &time3);
+    int time3_diff = (time3.tv_sec - time2.tv_sec) * 1000000 + (time3.tv_nsec - time2.tv_nsec) / 1000;
+    if (time3_diff > 1000)
+        printf(ANSI_COLOR_YELLOW "record_meta_to_file: %04dus\n" ANSI_COLOR_RESET, time3_diff);
+
+    return false;
+
+}
+
+bool cap_meta_replay(char *buf, int *len) {
+    assert(is_inited);
+    assert(is_replay);
+    assert(have_meta);
+    assert(meta_not_processed == true);
+    meta_not_processed = false;
+
+    *len = replay_meta_sizes[replay_ids_i];
+    assert(*len >= 0);
+    if (*len != 0) {
+        size_t readed = fread(buf, *len, 1, fp);
+        assert(readed == 1);
+    }
 
     return false;
 }
 
+void convert_record_from_splitted_file(void) {
+    // old index file
+    FILE *fp_index_old = fopen("record_old/" "index", "rb");
+    assert(fp_index_old);
 
+    // new
 
+    int ret = system("rm -rf " "record/");
+    ret = system("mkdir -p " "record/");
 
+    fp = fopen("record/" "data", "wb");
+    assert(fp);
+
+    // index file
+    fp_index = fopen("record/" "index", "wb");
+    assert(fp_index);
+
+    for (int i = 0; ; ++i) {
+        // old
+        int id;
+        int ret = fscanf(fp_index_old, "%d", &id);
+        if (ret == EOF) break;
+
+        char filename[50];
+        int filename_len = sprintf(filename, "record_old/" "%06d" ".raw", id);
+
+        FILE *fp_old = fopen(filename, "rb");
+        assert(fp_old);
+
+        fseek(fp_old, 0, SEEK_END);
+        int size = ftell(fp_old);
+        fseek(fp_old, 0, SEEK_SET);  /* same as rewind(f); */
+        static void *raw_image[60000];
+        size_t readed = fread(raw_image, size, 1, fp_old);
+        assert(readed == 1);
+        fclose(fp_old);
+
+        // new
+        assert(id < MAX_ID);
+        size_t written = fwrite(raw_image, size, 1, fp);
+        assert(written == 1);
+
+        // index file
+        ret = fprintf(fp_index, "%d %d\n", id, size);
+        assert(ret >= 0);
+    }
+    replay_ids_i = 0;
+
+    fclose(fp_index_old);
+
+    fclose(fp);
+
+    fclose(fp_index);
+}

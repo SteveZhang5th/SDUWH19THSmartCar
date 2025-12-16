@@ -53,8 +53,8 @@ public:
     bool init(const std::string pathModel)
     {
         //模型初始化
-        this->predictor_nna_ = std::make_shared<PPNCPredictor>("../res/config/config_ppncnna.json");
-        this->predictor_nms_ = std::make_shared<PPNCPredictor>("../res/config/config_ppncnms.json");
+        this->predictor_nna_ = std::make_shared<PPNCPredictor>("../res_datav1/config/config_ppncnna.json");
+        this->predictor_nms_ = std::make_shared<PPNCPredictor>("../res_datav1/config/config_ppncnms.json");
         this->onnx_env_ = Ort::Env(OrtLoggingLevel::ORT_LOGGING_LEVEL_WARNING, "test");
         Ort::SessionOptions session_options;
         session_options.SetIntraOpNumThreads(8);

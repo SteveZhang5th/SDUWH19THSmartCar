@@ -1,6 +1,7 @@
-/root/workspace/SDUWHSmartCar/build/CMakeFiles/rebuild_cache.dir
-/root/workspace/SDUWHSmartCar/build/CMakeFiles/edit_cache.dir
-/root/workspace/SDUWHSmartCar/build/CMakeFiles/pthreadcap.dir
-/root/workspace/SDUWHSmartCar/build/CMakeFiles/RunImages.dir
-/root/workspace/SDUWHSmartCar/build/CMakeFiles/PictureCap.dir
 /root/workspace/SDUWHSmartCar/build/CMakeFiles/StaticTest.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/PictureCap.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/rebuild_cache.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/RunImages.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/pthreadcap.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/mainpro.dir
+/root/workspace/SDUWHSmartCar/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,10 @@
+bomb
+bridge
+safety
+cone
+danger
+evil
+patient
+spy
+thief
+tumble

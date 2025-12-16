@@ -324,7 +324,7 @@ int usb_uart_5byte_send_3_1(int fd, uint8 *flag_to_lowercomputer, int duty_Motor
         message[3] = duty_Motor;
     }else if(duty_Motor<0 && duty_Motor>= -126){//电机目标在-126~0之间时，message[3]的最高位为1
         message[3] = duty_Motor;
-    //cout<<message[3]<<endl;
+  
     }else 
     message[3] = 0;//如果出现错位，则置零
 
@@ -353,9 +353,11 @@ int usb_uart_5byte_send_3_1(int fd, uint8 *flag_to_lowercomputer, int duty_Motor
 备注信息：4.0版本中，通信帧进行了扩展，电机的数据长度从8位扩展到16位，舵机保持不变为8位，引入了新的通信内容最远距离distance(8位)，
 以及赛道拟合中线的斜率slope(16位)
 */
-int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int duty_SMotor, int distance, float slope)
+int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int duty_SMotor, unsigned int distance, float slope)
 {
-    uint8 i;
+    int i;
+    int duty_Motor_High;
+    int duty_Motor_Low;
     uint8 Message[9] = {0xFF};
 
     Message[0] = 0xFF;
@@ -368,22 +370,40 @@ int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int 
         Message[2] += flag_to_lowercomputer[i]<<(i-7);
     }
 
-    if(duty_Motor > 0)
+    // if(duty_Motor > 0)
+    // {
+    //     Message[3] = duty_Motor/100;
+    //     Message[4] = duty_Motor%100;
+    // }
+    // else
+    // {
+    //     Message[3] = -duty_Motor/100;
+    //     Message[4] = duty_Motor%100;
+    // }
+    if(duty_Motor >= 0)
     {
-        Message[3] = duty_Motor/100;
-        Message[4] = duty_Motor%100;
+        Message[3] = (duty_Motor/100)&0x7F;
+        Message[4] = (uint8)(duty_Motor%100);
     }
     else
     {
-        Message[3] = -duty_Motor/100;
-        Message[4] = duty_Motor%100;
+        Message[3] = (-duty_Motor/100)&0x7F;
+        Message[4] = -(duty_Motor%100)+128;
     }
 
     if(duty_SMotor > 120)
         duty_SMotor = 120;
     else if(duty_SMotor < -120)
         duty_SMotor = -120;
-    Message[5] = duty_SMotor;
+
+    if(duty_SMotor>=0 && duty_SMotor<=127 ){//舵机目标在0~127之间时，message[4]的最高位为0
+        Message[5] = duty_SMotor;
+    }else if(duty_SMotor<0 && duty_SMotor>= -126){//舵机目标在-126~0之间时，message[4]的最高位为1
+        Message[5] = -duty_SMotor+128;
+    }else {
+        Message[5] = 0;//如果出现错误，则置零
+    }
+
 
     if(distance >= 254)
         distance = 254;
@@ -404,10 +424,6 @@ int usb_uart_send_4_0(int fd, uint8 *flag_to_lowercomputer, int duty_Motor, int 
         Message[7] |= 0x80;
     }
     
-    for(i = 0; i < 9; i++)
-    {
-        Message[i] = 0xFF;
-    }
     i = write(fd, Message, 9);
     //i = write(fd, message, 5);
     memset(flag_to_lowercomputer,0,14);

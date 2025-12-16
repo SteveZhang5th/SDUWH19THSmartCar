@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/root/workspace/SDUWHSmartCar/
 Determining if the C compiler works passed with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d1d34/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d1d34.dir/build.make CMakeFiles/cmTC_d1d34.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_21bfa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_21bfa.dir/build.make CMakeFiles/cmTC_21bfa.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d1d34.dir/testCCompiler.c.o
-/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_d1d34.dir/testCCompiler.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_d1d34
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1d34.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_d1d34.dir/testCCompiler.c.o  -o cmTC_d1d34 
+Building C object CMakeFiles/cmTC_21bfa.dir/testCCompiler.c.o
+/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_21bfa.dir/testCCompiler.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_21bfa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21bfa.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_21bfa.dir/testCCompiler.c.o  -o cmTC_21bfa 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_42450/fast"
-/usr/bin/make -f CMakeFiles/cmTC_42450.dir/build.make CMakeFiles/cmTC_42450.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_665e3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_665e3.dir/build.make CMakeFiles/cmTC_665e3.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o
-/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_42450
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42450.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc     -v CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o  -o cmTC_42450 
+Building C object CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o
+/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_665e3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_665e3.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc     -v CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o  -o cmTC_665e3 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper
@@ -59,9 +59,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_42450' '-mlittle-endian' '-mabi=lp64'
- /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuClASY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_42450 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_42450' '-mlittle-endian' '-mabi=lp64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_665e3' '-mlittle-endian' '-mabi=lp64'
+ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLaTLM5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_665e3 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_665e3' '-mlittle-endian' '-mabi=lp64'
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -69,14 +69,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_42450/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_42450.dir/build.make CMakeFiles/cmTC_42450.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_665e3/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_665e3.dir/build.make CMakeFiles/cmTC_665e3.dir/build]
   ignore line: [make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_42450]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42450.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/aarch64-linux-gnu-gcc     -v CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o  -o cmTC_42450 ]
+  ignore line: [Building C object CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_665e3]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_665e3.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/aarch64-linux-gnu-gcc     -v CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o  -o cmTC_665e3 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_42450' '-mlittle-endian' '-mabi=lp64']
-  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuClASY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_42450 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_665e3' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLaTLM5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_665e3 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccuClASY.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccLaTLM5.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_42450] ==> ignore
+    arg [cmTC_665e3] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -124,7 +124,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_42450.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_665e3.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -156,14 +156,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e1767/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e1767.dir/build.make CMakeFiles/cmTC_e1767.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_17dbd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_17dbd.dir/build.make CMakeFiles/cmTC_17dbd.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e1767.dir/feature_tests.c.o
-/usr/bin/aarch64-linux-gnu-gcc   -std=c11 -o CMakeFiles/cmTC_e1767.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e1767
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1767.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_e1767.dir/feature_tests.c.o  -o cmTC_e1767 
+Building C object CMakeFiles/cmTC_17dbd.dir/feature_tests.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -std=c11 -o CMakeFiles/cmTC_17dbd.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_17dbd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17dbd.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_17dbd.dir/feature_tests.c.o  -o cmTC_17dbd 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -176,14 +176,14 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_27553/fast"
-/usr/bin/make -f CMakeFiles/cmTC_27553.dir/build.make CMakeFiles/cmTC_27553.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e17d6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e17d6.dir/build.make CMakeFiles/cmTC_e17d6.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_27553.dir/feature_tests.c.o
-/usr/bin/aarch64-linux-gnu-gcc   -std=c99 -o CMakeFiles/cmTC_27553.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_27553
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27553.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_27553.dir/feature_tests.c.o  -o cmTC_27553 
+Building C object CMakeFiles/cmTC_e17d6.dir/feature_tests.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -std=c99 -o CMakeFiles/cmTC_e17d6.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e17d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e17d6.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_e17d6.dir/feature_tests.c.o  -o cmTC_e17d6 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -196,14 +196,14 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_aaf33/fast"
-/usr/bin/make -f CMakeFiles/cmTC_aaf33.dir/build.make CMakeFiles/cmTC_aaf33.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1db32/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1db32.dir/build.make CMakeFiles/cmTC_1db32.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_aaf33.dir/feature_tests.c.o
-/usr/bin/aarch64-linux-gnu-gcc   -std=c90 -o CMakeFiles/cmTC_aaf33.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_aaf33
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aaf33.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_aaf33.dir/feature_tests.c.o  -o cmTC_aaf33 
+Building C object CMakeFiles/cmTC_1db32.dir/feature_tests.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -std=c90 -o CMakeFiles/cmTC_1db32.dir/feature_tests.c.o   -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1db32
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1db32.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc      CMakeFiles/cmTC_1db32.dir/feature_tests.c.o  -o cmTC_1db32 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -214,28 +214,28 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_be690/fast"
-/usr/bin/make -f CMakeFiles/cmTC_be690.dir/build.make CMakeFiles/cmTC_be690.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2d820/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d820.dir/build.make CMakeFiles/cmTC_2d820.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_be690.dir/testCXXCompiler.cxx.o
-/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_be690.dir/testCXXCompiler.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_be690
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be690.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_be690.dir/testCXXCompiler.cxx.o  -o cmTC_be690 
+Building CXX object CMakeFiles/cmTC_2d820.dir/testCXXCompiler.cxx.o
+/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_2d820.dir/testCXXCompiler.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_2d820
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d820.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_2d820.dir/testCXXCompiler.cxx.o  -o cmTC_2d820 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_45b18/fast"
-/usr/bin/make -f CMakeFiles/cmTC_45b18.dir/build.make CMakeFiles/cmTC_45b18.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8b828/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8b828.dir/build.make CMakeFiles/cmTC_8b828.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_45b18
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45b18.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++      -v CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_45b18 
+Building CXX object CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_8b828
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b828.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++      -v CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8b828 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper
@@ -245,9 +245,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45b18' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
- /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4xDlke.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_45b18 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45b18' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8b828' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCj6Of.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_8b828 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8b828' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -255,14 +255,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_45b18/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_45b18.dir/build.make CMakeFiles/cmTC_45b18.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8b828/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8b828.dir/build.make CMakeFiles/cmTC_8b828.dir/build]
   ignore line: [make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_45b18]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45b18.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/aarch64-linux-gnu-g++      -v CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_45b18 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/aarch64-linux-gnu-g++     -o CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_8b828]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b828.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/aarch64-linux-gnu-g++      -v CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8b828 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper]
@@ -272,13 +272,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45b18' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
-  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4xDlke.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_45b18 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8b828' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCj6Of.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_8b828 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc4xDlke.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccWCj6Of.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -298,7 +298,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_45b18] ==> ignore
+    arg [cmTC_8b828] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -310,7 +310,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_45b18.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_8b828.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -338,14 +338,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b4f85/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b4f85.dir/build.make CMakeFiles/cmTC_b4f85.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_dd0c1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dd0c1.dir/build.make CMakeFiles/cmTC_dd0c1.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b4f85.dir/feature_tests.cxx.o
-/usr/bin/aarch64-linux-gnu-g++    -std=c++1z -o CMakeFiles/cmTC_b4f85.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b4f85
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4f85.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_b4f85.dir/feature_tests.cxx.o  -o cmTC_b4f85 
+Building CXX object CMakeFiles/cmTC_dd0c1.dir/feature_tests.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -std=c++1z -o CMakeFiles/cmTC_dd0c1.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_dd0c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd0c1.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_dd0c1.dir/feature_tests.cxx.o  -o cmTC_dd0c1 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -411,14 +411,14 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d8062/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d8062.dir/build.make CMakeFiles/cmTC_d8062.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ce30d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ce30d.dir/build.make CMakeFiles/cmTC_ce30d.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d8062.dir/feature_tests.cxx.o
-/usr/bin/aarch64-linux-gnu-g++    -std=c++14 -o CMakeFiles/cmTC_d8062.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d8062
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8062.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_d8062.dir/feature_tests.cxx.o  -o cmTC_d8062 
+Building CXX object CMakeFiles/cmTC_ce30d.dir/feature_tests.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -std=c++14 -o CMakeFiles/cmTC_ce30d.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ce30d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ce30d.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_ce30d.dir/feature_tests.cxx.o  -o cmTC_ce30d 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -484,14 +484,14 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d673a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d673a.dir/build.make CMakeFiles/cmTC_d673a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2ce8f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2ce8f.dir/build.make CMakeFiles/cmTC_2ce8f.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d673a.dir/feature_tests.cxx.o
-/usr/bin/aarch64-linux-gnu-g++    -std=c++11 -o CMakeFiles/cmTC_d673a.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d673a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d673a.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_d673a.dir/feature_tests.cxx.o  -o cmTC_d673a 
+Building CXX object CMakeFiles/cmTC_2ce8f.dir/feature_tests.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -std=c++11 -o CMakeFiles/cmTC_2ce8f.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2ce8f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ce8f.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_2ce8f.dir/feature_tests.cxx.o  -o cmTC_2ce8f 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 
@@ -557,14 +557,14 @@ make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMake
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2ce96/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2ce96.dir/build.make CMakeFiles/cmTC_2ce96.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_66efe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_66efe.dir/build.make CMakeFiles/cmTC_66efe.dir/build
 make[1]: Entering directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_2ce96.dir/feature_tests.cxx.o
-/usr/bin/aarch64-linux-gnu-g++    -std=c++98 -o CMakeFiles/cmTC_2ce96.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_2ce96
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ce96.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_2ce96.dir/feature_tests.cxx.o  -o cmTC_2ce96 
+Building CXX object CMakeFiles/cmTC_66efe.dir/feature_tests.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -std=c++98 -o CMakeFiles/cmTC_66efe.dir/feature_tests.cxx.o -c /root/workspace/SDUWHSmartCar/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_66efe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66efe.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++       CMakeFiles/cmTC_66efe.dir/feature_tests.cxx.o  -o cmTC_66efe 
 make[1]: Leaving directory '/root/workspace/SDUWHSmartCar/build/CMakeFiles/CMakeTmp'
 
 

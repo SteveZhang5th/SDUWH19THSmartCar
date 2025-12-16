@@ -1,38 +1,43 @@
 [
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/pthreadcap.dir/src/cap.c.o   -c /root/workspace/SDUWHSmartCar/src/cap.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/StaticTest.dir/src/cap.c.o   -c /root/workspace/SDUWHSmartCar/src/cap.c",
   "file": "/root/workspace/SDUWHSmartCar/src/cap.c"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/pthreadcap.dir/src/comm.c.o   -c /root/workspace/SDUWHSmartCar/src/comm.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/StaticTest.dir/src/comm.c.o   -c /root/workspace/SDUWHSmartCar/src/comm.c",
   "file": "/root/workspace/SDUWHSmartCar/src/comm.c"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/serial.cpp.o -c /root/workspace/SDUWHSmartCar/src/serial.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/serial.cpp.o -c /root/workspace/SDUWHSmartCar/src/serial.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/serial.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/MyUart.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyUart.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/MyUart.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyUart.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/MyUart.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/trvision.cpp.o -c /root/workspace/SDUWHSmartCar/src/trvision.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/trvision.cpp.o -c /root/workspace/SDUWHSmartCar/src/trvision.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/trvision.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/MyMath.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyMath.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/MyMath.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyMath.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/MyMath.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/pthreadcap.cpp.o -c /root/workspace/SDUWHSmartCar/pthreadcap.cpp",
-  "file": "/root/workspace/SDUWHSmartCar/pthreadcap.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/StaticTest.cpp.o -c /root/workspace/SDUWHSmartCar/StaticTest.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/StaticTest.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/PictureCap.dir/PictureCap.cpp.o -c /root/workspace/SDUWHSmartCar/PictureCap.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/PictureCap.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
@@ -71,42 +76,72 @@
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/PictureCap.dir/PictureCap.cpp.o -c /root/workspace/SDUWHSmartCar/PictureCap.cpp",
-  "file": "/root/workspace/SDUWHSmartCar/PictureCap.cpp"
-},
-{
-  "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/StaticTest.dir/src/cap.c.o   -c /root/workspace/SDUWHSmartCar/src/cap.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/pthreadcap.dir/src/cap.c.o   -c /root/workspace/SDUWHSmartCar/src/cap.c",
   "file": "/root/workspace/SDUWHSmartCar/src/cap.c"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/StaticTest.dir/src/comm.c.o   -c /root/workspace/SDUWHSmartCar/src/comm.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/pthreadcap.dir/src/comm.c.o   -c /root/workspace/SDUWHSmartCar/src/comm.c",
   "file": "/root/workspace/SDUWHSmartCar/src/comm.c"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/serial.cpp.o -c /root/workspace/SDUWHSmartCar/src/serial.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/serial.cpp.o -c /root/workspace/SDUWHSmartCar/src/serial.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/serial.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/MyUart.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyUart.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/MyUart.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyUart.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/MyUart.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/trvision.cpp.o -c /root/workspace/SDUWHSmartCar/src/trvision.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/trvision.cpp.o -c /root/workspace/SDUWHSmartCar/src/trvision.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/trvision.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/src/MyMath.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyMath.cpp",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/src/MyMath.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyMath.cpp",
   "file": "/root/workspace/SDUWHSmartCar/src/MyMath.cpp"
 },
 {
   "directory": "/root/workspace/SDUWHSmartCar/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/StaticTest.dir/StaticTest.cpp.o -c /root/workspace/SDUWHSmartCar/StaticTest.cpp",
-  "file": "/root/workspace/SDUWHSmartCar/StaticTest.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/pthreadcap.dir/pthreadcap.cpp.o -c /root/workspace/SDUWHSmartCar/pthreadcap.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/pthreadcap.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/mainpro.dir/src/cap.c.o   -c /root/workspace/SDUWHSmartCar/src/cap.c",
+  "file": "/root/workspace/SDUWHSmartCar/src/cap.c"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -g   -o CMakeFiles/mainpro.dir/src/comm.c.o   -c /root/workspace/SDUWHSmartCar/src/comm.c",
+  "file": "/root/workspace/SDUWHSmartCar/src/comm.c"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/mainpro.dir/src/serial.cpp.o -c /root/workspace/SDUWHSmartCar/src/serial.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/src/serial.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/mainpro.dir/src/MyUart.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyUart.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/src/MyUart.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/mainpro.dir/src/trvision.cpp.o -c /root/workspace/SDUWHSmartCar/src/trvision.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/src/trvision.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/mainpro.dir/src/MyMath.cpp.o -c /root/workspace/SDUWHSmartCar/src/MyMath.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/src/MyMath.cpp"
+},
+{
+  "directory": "/root/workspace/SDUWHSmartCar/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++   -I/root/workspace/SDUWHSmartCar/config -I/root/workspace/SDUWHSmartCar/src -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/include/libserial -I/usr/local/include/ppnc -I/usr/local/include/onnx  -O3 -Wall -mcpu=native -flto -pthread -g   -std=gnu++1z -o CMakeFiles/mainpro.dir/mainpro.cpp.o -c /root/workspace/SDUWHSmartCar/mainpro.cpp",
+  "file": "/root/workspace/SDUWHSmartCar/mainpro.cpp"
 }
 ]

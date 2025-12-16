@@ -123,7 +123,7 @@ void* ai_thread(void* args)//AI线程
         // cv::Mat imageAi = Aiframe.clone();
         detection.drawBox(Aiframe);
 
-        //my_image_show("AIimg", Aiframe, show_scale, ai_show_pos);//AI窗口
+        //my_image_show("AIimg", Aiframe, show_scale, ai_show_pos);//AI窗口//
        
         namedWindow("AiImage", WINDOW_NORMAL);
         imshow("AiImage",Aiframe);//
@@ -163,6 +163,13 @@ void ai_get_data_back() {
 }
 
 
+void GetROI(Mat src, Mat& ROI){
+    int width = src.cols;
+    int height = src.rows;
+    Rect rect(10, height / 7, width - 20, height * 6 / 7);//0, height*7/20,width,height/2
+    ROI = src(rect);
+}
+
 
 
 int main(int argc, char *argv[]) {
@@ -172,6 +179,27 @@ int main(int argc, char *argv[]) {
   cin>>VisionEdge;
   if(VisionEdge == 1)
     MakeLineFlag = true;
+
+  cout<<"首先进行配置文件读取"<<endl;
+  std::ifstream in_file("/root/workspace/SDUWHSmartCar/config.json");
+  nlohmann::json doc;
+  if (!in_file.is_open()) {
+    cout<<"打开配置文件失败！"<<endl;
+    exit(1);
+  }
+  in_file >> doc;
+  in_file.close();
+
+  int HandThreshold = doc["HandThreshold"];
+  cout<<"手动修正阈值HandThreshold = "<<HandThreshold<<endl;
+
+  double yellowxishu = doc["yellowxishu"];
+  cout<<"yellowxishu = "<<yellowxishu<<endl;
+  int yellowyuzhi = doc["yellowyuzhi"];
+  cout<<"yellowyuzhi = "<<yellowyuzhi<<endl;
+
+
+  cout<<"配置文件读取完成!"<<endl;  
 
   
   /*****************************************************/
@@ -201,8 +229,9 @@ int main(int argc, char *argv[]) {
 
 /*****************************************************/
   //计时声明
-  //clock_t begin,end;
+  //clock_t begin,end;//
   Mat kernel_3 = Mat::ones(Size(3, 3), CV_8U);
+  //elementflag = YellowHinder;
 
   while(1){
   
@@ -211,16 +240,21 @@ int main(int argc, char *argv[]) {
   cvmat = cvMat(240,320,CV_8UC3,(void*)yuv422frame);	
   imgs = cvDecodeImage(&cvmat,1);
   m1 = cvarrToMat(imgs);
-
-  //begin = clock();
+  GetROI(m1,m1);
+  
+  
+  //begin = clock();//
   resize(m1, m1, Size(CamW, CamH));
 
   cv::Mat frame_splited[3];
   cv::split(m1, frame_splited);
   cv::Mat red_ch = frame_splited[2].clone();
   cv::blur(red_ch, red_ch, cv::Size(3, 3)); // 减少噪点
+  // Mat gray;
+  // cvtColor(m1,gray,COLOR_BGR2GRAY); //
 
   memcpy(images, red_ch.isContinuous() ? red_ch.data : red_ch.clone().data, sizeof images); // Mat 转数组
+  //MyCVMatTounint8arry(gray);
 
   Mat Cone_mat = cv::Mat(CamH,CamW,CV_8UC1);
    
@@ -229,10 +263,10 @@ int main(int argc, char *argv[]) {
       for(int j = 0; j < m1.cols; ++j){
 
         // 绿-蓝
-        int diff1 = pixel[j][1] - (int)pixel[j][0] * 1.1; //省赛1.1
+        int diff1 = pixel[j][1] - (int)pixel[j][0] * yellowxishu; //省赛1.1
         if (diff1 < 0) 
           diff1 = 0;
-        else if(diff1 > 2)
+        else if(diff1 > yellowyuzhi)
           diff1 = 254;
         Cone_mat.at<uchar>(i,j) = diff1;
       }
@@ -250,17 +284,19 @@ int main(int argc, char *argv[]) {
         continue;
       // if(result.width > 9 && result.height > 9 && (result.y + result.height/2) > 24){
       //   rectlist_cone.push_back(result);
-      // }
+      // }//
       draw_point(m1,result.x + result.width/2,result.y + result.height/2,CV_COLOR_GOLD);
       rectangle(m1,result,CV_COLOR_RED,1);
+      putText(m1,to_string(result.y + result.height/2),Point(result.x + result.width/2,result.y + result.height/2),FONT_HERSHEY_COMPLEX,0.3,Scalar(255,0,0),1,8);
   }
   namedWindow("img", WINDOW_NORMAL);
-    imshow("img", m1);
+  imshow("img", m1);
+  
 
-  Threshold = otsuThreshold(images[0], CamW, CamH);
+  Threshold = otsuThreshold(images[0], CamW, CamH) + HandThreshold;
   Binaryisation(Threshold);
 
-  Find_FengDing();//注意该函数必须在前面运行
+  Find_FengDing();//注意该函数必须在前面运行////
 
   InitialiseFlag();
 
@@ -339,6 +375,9 @@ void Vision(){
    VisionData("lostrightside:"+to_string(lostrightside),20,68);
    VisionData("elementflag:"+ElementString[(int)elementflag],20,80);
    VisionData("controldata:"+to_string(controldata),20,92);
+   VisionData("realcontrolline1:"+to_string(realcontrolline1),20,104);
+   VisionData("length_half_leftside:"+to_string(length_half_leftside),20,116);
+   VisionData("length_half_rightside:"+to_string(length_half_rightside),20,128);
 
    VisionData("reallostleftside:"+to_string(reallostleftside),20,152);
    VisionData("reallostrightside:"+to_string(reallostrightside),20,164);
@@ -394,12 +433,16 @@ void Vision(){
       rgbvision.at<Vec3b>(i,midline[i])[1] = 255;
       rgbvision.at<Vec3b>(i,midline[i])[2] = 0;
    }
-  rgbvision.at<Vec3b>(waycontrolline1,Mid)[0] = 0;
-  rgbvision.at<Vec3b>(waycontrolline1,Mid)[1] = 0;
-  rgbvision.at<Vec3b>(waycontrolline1,Mid)[2] = 255;
-  rgbvision.at<Vec3b>(waycontrolline2,Mid)[0] = 0;
-  rgbvision.at<Vec3b>(waycontrolline2,Mid)[1] = 0;
-  rgbvision.at<Vec3b>(waycontrolline2,Mid)[2] = 255;
+  // rgbvision.at<Vec3b>(waycontrolline1,Mid)[0] = 0;
+  // rgbvision.at<Vec3b>(waycontrolline1,Mid)[1] = 0;
+  // rgbvision.at<Vec3b>(waycontrolline1,Mid)[2] = 255;
+  // rgbvision.at<Vec3b>(waycontrolline2,Mid)[0] = 0;
+  // rgbvision.at<Vec3b>(waycontrolline2,Mid)[1] = 0;
+  // rgbvision.at<Vec3b>(waycontrolline2,Mid)[2] = 255;
+  //draw_point(rgbvision,waycontrolline1,Mid,CV_COLOR_RED);//
+  draw_point(rgbvision,Mid,realcontrolline1,CV_COLOR_RED);
+  draw_point(rgbvision,Mid,realcontrolline2,CV_COLOR_RED);
+  //cout<<realcontrolline1<<endl;
     // for(int i = 0;i < 50;i++){//改为蓝色测试
     // rgbvision.at<Vec3b>(i,2)[0] = 255;
     // rgbvision.at<Vec3b>(i,2)[1] = 0;

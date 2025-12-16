@@ -8,9 +8,18 @@
 #define CAP_HEIGHT 240
 #define CAP_FPS 180
 
+
 bool cap_init(bool is_replay_, bool is_record_, bool have_meta_);
 bool cap_deinit(void);
 bool cap_grab(void *raw_image, int *raw_image_size);
+
+int cap_replay_get_image_id(void);
+bool cap_replay_go(int step);
+
+bool cap_meta_record(const char *buf, int len);
+bool cap_meta_replay(char *buf, int *len);
+
+void convert_record_from_splitted_file(void);
 
 #define IMG_H 90 // TODO 根据自己小车的摄像头角度位置填充
 #define IMG_W 150 

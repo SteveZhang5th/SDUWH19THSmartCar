@@ -25,7 +25,7 @@ using namespace cv;
 
 
 #define CV_COLOR_RED cv::Scalar(0, 0, 255)   //纯红
-#define CV_COLOR_GREEN cv::Scalar(0, 255, 0) //纯绿
+#define CV_COLOR_GREEN cv::Scalar(0, 255, 0) //纯绿////
 #define CV_COLOR_BLUE cv::Scalar(255, 0, 0)  //纯蓝
 
 #define CV_COLOR_DARKGRAY cv::Scalar(169, 169, 169) //深灰色
@@ -37,15 +37,15 @@ using namespace cv;
 #define CV_COLOR_YELLOW cv::Scalar(0, 255, 255)     //纯黄色
 
 #define CV_COLOR_OLIVE cv::Scalar(0, 128, 128)        //橄榄色
-#define CV_COLOR_LIGHTGREEN cv::Scalar(144, 238, 144) //浅绿色
-#define CV_COLOR_DARKCYAN cv::Scalar(139, 139, 0)     //深青色
+#define CV_COLOR_LIGHTGREEN cv::Scalar(144, 238, 144) //浅绿色//
+#define CV_COLOR_DARKCYAN cv::Scalar(139, 139, 0)     //深青色//
 
 #define CV_COLOR_SKYBLUE cv::Scalar(230, 216, 173) //天蓝色
 #define CV_COLOR_INDIGO cv::Scalar(130, 0, 75)     //藏青色
-#define CV_COLOR_PURPLE cv::Scalar(128, 0, 128)    //紫色
+#define CV_COLOR_PURPLE cv::Scalar(128, 0, 128)    //紫色//
 
 #define CV_COLOR_PINK cv::Scalar(203, 192, 255)    //粉色
-#define CV_COLOR_DEEPPINK cv::Scalar(147, 20, 255) //深粉色
+#define CV_COLOR_DEEPPINK cv::Scalar(147, 20, 255) //深粉色//
 #define CV_COLOR_VIOLET cv::Scalar(238, 130, 238)  //紫罗兰
 
 #define CV_COLOR_BLACK cv::Scalar(0, 0, 0)  //黑色
@@ -72,7 +72,7 @@ int show_pos = -1;
 
 // my imshow
 void my_image_show(const char *name, const cv::Mat &mat, int show_scale_ = show_scale, int my_show_pos = -1) {
-    // cv::namedWindow(name, cv::WINDOW_NORMAL);
+    // cv::namedWindow(name, cv::WINDOW_NORMAL);//
     cv::Mat buf;
     if (strcmp(name, "perspective") == 0) {
         cv::resize(mat, buf, cv::Size(mat.cols * show_scale / 2, mat.rows * show_scale / 2), 0, 0, cv::INTER_NEAREST);
@@ -85,7 +85,7 @@ void my_image_show(const char *name, const cv::Mat &mat, int show_scale_ = show_
 }
 
 
-int controldata = 0;//向下位机发送的打角行数据
+int controldata = 0;//向下位机发送的打角行数据//
 int motordata = 28;//向下位机发送电机控制数据
 uint8 sendmessage[14] = {0};//向下位机发送的数组
 Mat datashow(CamH,CamW,CV_8UC3,Scalar(0,255,0));//显示数据
@@ -110,7 +110,7 @@ void* ai_thread(void* args)//AI线程
     //bool ret;不知道为什么这个没用上
 
     PPNCDetection detection;
-    if (!detection.init("../res_datav1/model/yolov3_mobilenet_v1")) //AI推理初始化
+    if (!detection.init("../res_datav1/model/10classv2")) //AI推理初始化
         //return 1;
 
     printf("compiler passed");
@@ -135,8 +135,8 @@ void* ai_thread(void* args)//AI线程
         cv::Point rookPoints[1][4];
         rookPoints[0][0] = cv::Point(0, 0);//左上角
         rookPoints[0][1] = cv::Point(319, 0);//右上角
-        rookPoints[0][2] = cv::Point(319, CAP_HEIGHT * 0.05);//右下角
-        rookPoints[0][3] = cv::Point(0, CAP_HEIGHT * 0.05);//左下角
+        rookPoints[0][2] = cv::Point(319, CAP_HEIGHT * 0.1);//右下角
+        rookPoints[0][3] = cv::Point(0, CAP_HEIGHT * 0.1);//左下角
         int npt[]={4};//二维数组 每列长度
         const cv::Point* ppt[1] = {rookPoints[0]};//所有多边形点坐标
         fillPoly(Aiframe, ppt, npt, 1, cv::Scalar(0, 0, 0));
@@ -169,7 +169,8 @@ void ai_get_data_back() {
 
         // ====================== handle data
         // 取回数据
-        results.empty();
+        //results.empty();
+        results.clear();
         results.assign(ai_results.begin(), ai_results.end());      
 
         ai_end_frame = true;
@@ -187,12 +188,17 @@ void ai_get_data_back() {
     pthread_mutex_unlock(&ai_lock);
 }
 
-
+void GetROI(Mat src, Mat& ROI){
+    int width = src.cols;
+    int height = src.rows;
+    Rect rect(10, height / 7, width - 20, height * 6 / 7);//0, height*7/20,width,height/2//
+    ROI = src(rect);
+}
 
 int main(int argc, char *argv[]) {
 
   cout<<"首先进行配置文件读取"<<endl;
-  std::ifstream in_file("/root/workspace/SDUWHSmartCar/config.json");
+  std::ifstream in_file("/root/workspace/SDUWHSmartCar/config.json");//
   nlohmann::json doc;
   if (!in_file.is_open()) {
     cout<<"打开配置文件失败！"<<endl;
@@ -201,20 +207,20 @@ int main(int argc, char *argv[]) {
   in_file >> doc;
   in_file.close();
 
-  visionenable = doc["visionenable"];
-  if(visionenable)
-    cout<<"已开启可视化！"<<endl;
-  else
-    cout<<"可视化关闭！"<<endl;
-
   bool UartSendEnable = doc["UartSendEnable"];
   if(UartSendEnable)
     cout<<"已开启Uart发送！"<<endl;
   else
     cout<<"Uart发送关闭！"<<endl;
 
-  bool EmergencyStop = doc["EmergencyStop"];
-  if(EmergencyStop)
+  visionenable = doc["visionenable"];
+  if(visionenable)
+    cout<<"已开启可视化！"<<endl;
+  else
+    cout<<"可视化关闭！"<<endl;
+
+  bool EmergencyStopflag = doc["EmergencyStop"];
+  if(EmergencyStopflag)
     cout<<"已开启紧急停车！"<<endl;
   else
     cout<<"紧急停车关闭！"<<endl;
@@ -222,21 +228,74 @@ int main(int argc, char *argv[]) {
   int HandThreshold = doc["HandThreshold"];
   cout<<"手动修正阈值HandThreshold = "<<HandThreshold<<endl;
 
-  int SpeedHigh = doc["SpeedHigh"];
-  int SpeedHighRange = doc["SpeedHighRange"];
-  int SpeedMid = doc["SpeedMid"];
-  int SpeedMidRange = doc["SpeedMidRange"];
-  int SpeedLow = doc["SpeedLow"];
+  double yellowxishu = doc["yellowxishu"];
+  cout<<"yellowxishu = "<<yellowxishu<<endl;
+  int yellowyuzhi = doc["yellowyuzhi"];
+  cout<<"yellowyuzhi = "<<yellowyuzhi<<endl;
+
+  int Outblackcount = doc["Outblackcount"];
+  int CountZebraStop = doc["CountZebraStop"];
+
+  CrossStateEnable = doc["CrossStateEnable"];
+
+  int SpeedHigh = doc["speed"]["SpeedHigh"];
+  int SpeedHighRange = doc["speed"]["SpeedHighRange"];
+  int SpeedMid = doc["speed"]["SpeedMid"];
+  int SpeedMidRange = doc["speed"]["SpeedMidRange"];
+  int SpeedLow = doc["speed"]["SpeedLow"];
   cout<<"SpeedHigh = "<<SpeedHigh<<" SpeedHigh = "<<SpeedMid<<" SpeedLow = "<<SpeedLow<<endl;
 
+  PreRoundSpeed = doc["Round"]["PreRoundSpeed"];
+  RightRoundTime = doc["Round"]["RightRoundTime"];
+  LeftRoundTime = doc["Round"]["LeftRoundTime"];
+  InRightBoundPianyi = doc["Round"]["InRightBoundPianyi"];
+  InLeftBoundPianyi = doc["Round"]["InLeftBoundPianyi"];
+  OutRightBoundPianyi = doc["Round"]["OutRightBoundPianyi"];
+  OutLeftBoundPianyi = doc["Round"]["OutLeftBoundPianyi"];
+  InRoundSpeed = doc["Round"]["InRoundSpeed"];
+  OutRoundSpeed = doc["Round"]["OutRoundSpeed"];
+
+  InMaintenCount = doc["Mainten"]["InMaintenCount"];
+  OutConeDIstance = doc["Mainten"]["OutConeDIstance"];
+  PreMaintenSpeed = doc["Mainten"]["PreMaintenSpeed"];
+  InMaintenSpeed = doc["Mainten"]["InMaintenSpeed"];
+  LeftMaintenWay = doc["Mainten"]["LeftMaintenWay"];
+  RightMaintenWay = doc["Mainten"]["RightMaintenWay"];
+  OutMaintenSpeed = doc["Mainten"]["OutMaintenSpeed"];
+
+  InBoomCount = doc["Boom"]["InBoomCount"];
+  PreBoomSpeed = doc["Boom"]["PreBoomSpeed"];
+  YellowHinderSpeed = doc["Boom"]["YellowHinderSpeed"];
+  YellowChangeLine = doc["Boom"]["YellowChangeLine"];
+  LeftHinderPianyi = doc["Boom"]["LeftHinderPianyi"];
+  RightHinderPianyi = doc["Boom"]["RightHinderPianyi"];
+  BlockPianyi = doc["Boom"]["BlockPianyi"];
+  BlockPianLine = doc["Boom"]["BlockPianLine"];
+  YellowCount = doc["Boom"]["YellowCount"];
+  InBoomWay = doc["Boom"]["InBoomWay"];
+
+  BridgeSpeed = doc["Bridge"]["BridgeSpeed"];
+  BridgeEnable = doc["Bridge"]["BridgeEnable"];
+
+  InPropCount = doc["Prop"]["InPropCount"];
+  PreSpySpeed = doc["Prop"]["PreSpySpeed"];
+  OverSpySpeed = doc["Prop"]["OverSpySpeed"];
+  StopSpySpeed = doc["Prop"]["StopSpySpeed"];
+  StopSpyCount = doc["Prop"]["StopSpyCount"];
+  OverSpyCount = doc["Prop"]["OverSpyCount"];
+  PreDangerSpeed = doc["Prop"]["PreDangerSpeed"];
+  SafetyLeftPian = doc["Prop"]["SafetyLeftPian"];
+  SafetyRightPian = doc["Prop"]["SafetyRightPian"];
+  DangerRightPian = doc["Prop"]["DangerRightPian"];
+  DangerLeftPian = doc["Prop"]["DangerLeftPian"];
 
   cout<<"配置文件读取完成!"<<endl;
 
 
-  bool ret = cap_init(true, true, true);
+  bool ret = cap_init(false, false, false);
   assert(!ret);
 
-  // 初始化串口通信,新版本
+  // 初始化串口通信,新版本////
   // ret = comm_init();
   // assert(!ret);
   if(UartSendEnable){
@@ -251,21 +310,25 @@ int main(int argc, char *argv[]) {
 
   pthread_mutex_init(&ai_lock,NULL);
 
-  pthread_create(&toAI,NULL,ai_thread,NULL);
+  pthread_create(&toAI,NULL,ai_thread,NULL);//
 
   cout<<"初始化完成"<<endl;
 
  
     
-  //局部变量声明区
+  //局部变量声明区////
   static bool is_first_frame = true;
 
   int Stopt = 0;
   int BlackCount = 0;
-  int CountZebraStop = 80;
+
+  bool Emergencyflag = false;
+  int CountEmergencyStop = 50;
     
-  //clock_t begin,end;//
-  cout << "即将发车" << endl;
+  
+  cout << "即将发车！" << endl;
+  cout << "把山魂海韵的风，吹到哈尔滨！！！" << endl;
+
 
   while(true){
 
@@ -278,20 +341,22 @@ int main(int argc, char *argv[]) {
             continue;
         }
         
-        assert(len < 60000);
+        assert(len < 60000);//
 
         
 
         cv::Mat frame(cv::Size(CAP_WIDTH, CAP_HEIGHT), CV_8UC3);
         
         cv::imdecode(cv::Mat(1, len, CV_8U, buf), cv::IMREAD_COLOR, &frame);
+
+        GetROI(frame,frame);
             
         cv::resize(frame, frame, cv::Size(CamW, CamH), 0, 0, cv::INTER_LINEAR);
 
-        //cvtColor(frame, frame, CV_BGR2GRAY);
+        //cvtColor(frame, frame, CV_BGR2GRAY);//
         cv::Mat frame_splited[3];
         cv::split(frame, frame_splited);
-        cv::Mat red_ch = frame_splited[2].clone();//
+        cv::Mat red_ch = frame_splited[2].clone();
         cv::blur(red_ch, red_ch, cv::Size(3, 3)); // 减少噪点
 
         memcpy(images, red_ch.isContinuous() ? red_ch.data : red_ch.clone().data, sizeof images); // Mat 转数组
@@ -305,7 +370,7 @@ int main(int argc, char *argv[]) {
 
         ai_get_data_back();//
 
-        RecYellowCone(frame);
+        RecYellowCone(frame,yellowxishu,yellowyuzhi);
 
         Tr_result.clear();
         for(PredictResult i : results){
@@ -334,12 +399,12 @@ int main(int argc, char *argv[]) {
 
         //begin = clock(); 
         ReconElements();
-        //end = clock();
+        //end = clock();////
         //cout<<"跑完一帧所用时间:"<<double(end - begin) / CLOCKS_PER_SEC * 1000<<"ms"<<endl;
 
         
 
-        getmidline();
+        getmidline();//
 
         getcontroldata_main(SpeedHigh,SpeedHighRange,SpeedMid,SpeedMidRange,SpeedLow);
 
@@ -347,38 +412,45 @@ int main(int argc, char *argv[]) {
        
         
         
-        // uint8_t payload[10]; // 数据
-        // // 串口通信数据发送
+        // uint8_t payload[10]; // 数据////
+        // // 串口通信数据发送////
         // // TODO 对串口数据发送过程计时，评估对性能的影响
         // memset(payload, 0, sizeof payload);
         // payload[0] = 0X00;
-        // payload[1] = 0X00; 
+        // payload[1] = 0X00; //
         // payload[2] = 0X00;
         // payload[3] = 0X00;
         // ret = comm_send_blocking(COMM_TYPE_UPDATE_TO_TC264, payload);
-        // assert(!ret);
+        // assert(!ret);////
         if(UartSendEnable){
-          //usb_uart_5byte_send_3_0(fd, sendmessage, motordata,-controldata);//
-          usb_uart_send_4_0(fd, sendmessage, 200, 70, 50, 0.25);
+          //usb_uart_5byte_send_3_0(fd, sendmessage, motordata,-controldata);//////
+          if(Emergencyflag)
+            usb_uart_send_4_0(fd, sendmessage, 0, -controldata, dofhead, 0);//
+          else
+            usb_uart_send_4_0(fd, sendmessage, motordata, -controldata, dofhead, 0);//
         }
 
-        if(EmergencyStop){
+        if(EmergencyStopflag){
 
-          if(BlackCount < 100)//
+          if(BlackCount < 200)//
             BlackCount++;
           
-          if(elementflag == InMainten || elementflag == OutMainten || BlackCount < 100)
+          if(elementflag == InMainten || elementflag == OutMainten || BlackCount < 200 || elementflag == StopSpy)
             Stopt = 0;
 
-          if(dofhead < 3){
+          if(dofhead <= 1 && CountOutMainten < 5){
             Stopt++;
-            if(Stopt >= 35){
-              cout<<"紧急停车！";
-              break;
+            if(Stopt >= Outblackcount){
+              //elementflag == EmergencyStop;//
+              Emergencyflag = true;
+              EmergencyStopflag = false;
+              //UartSendEnable = false;
+              cout<<"紧急停车！"<<endl;
+              //break;//
             }
           }else{
             Stopt = 0;
-          }
+          }//
         }
         
 
@@ -386,11 +458,19 @@ int main(int argc, char *argv[]) {
           CountZebraStop--;
           if(CountZebraStop <= 0){
             cout<<"ZebraOut!"<<endl;
+            //UartSendEnable = false;
             break;
           }
         }
-       
-  
+
+        if(Emergencyflag){
+          CountEmergencyStop--;
+          if(CountEmergencyStop <= 0){
+            cout<<"EmergencyStopOut!"<<endl;
+            break;
+          }
+        }
+          
            
         if(visionenable){
           Vision();
@@ -401,7 +481,7 @@ int main(int argc, char *argv[]) {
         
 
     }
-     cout<<"end"<<endl;
+     cout<<"end"<<endl;//////
 
     return 0;
 }
@@ -419,7 +499,7 @@ void Vision(){
   cvtColor(vision,rgbvision,CV_GRAY2BGR);
   
 
-//   String yuzhi = to_string(Threshold);
+//   String yuzhi = to_string(Threshold);//
   //VisionData(yuzhi,20,20);
    VisionData("dofhean:"+to_string(dofhead),20,20);
    VisionData("length_left:"+to_string(length_leftside),20,32);
